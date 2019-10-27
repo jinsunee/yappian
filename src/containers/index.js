@@ -1,10 +1,5 @@
 import MainContainer from './MainContainer';
-import UrlContainer from './UrlContainer';
+import ProjectArchivingContainer from './ProjectArchivingContainer';
 import NotFound from './NotFound';
 
-
-export{
-    MainContainer,
-    UrlContainer,
-    NotFound
-};
+export { MainContainer, ProjectArchivingContainer, NotFound };

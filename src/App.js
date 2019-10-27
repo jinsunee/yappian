@@ -1,21 +1,27 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { MainContainer, UrlContainer, NotFound } from './containers'
+import {
+    MainContainer,
+    ProjectArchivingContainer,
+    NotFound,
+} from './containers';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-        <Router>
+    return (
+        <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={MainContainer} />
-                <Route path="/project" component={UrlContainer} />
+                <Route
+                    exact
+                    path="/:project_id"
+                    component={ProjectArchivingContainer}
+                />
                 <Route component={NotFound} />
             </Switch>
-        </Router>
-    </div>
-  );
+        </BrowserRouter>
+    );
 }
 
 export default App;
