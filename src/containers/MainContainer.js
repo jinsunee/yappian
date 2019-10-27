@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
+import {MainFrame} from '../components/Main'
 
 class MainContainer extends Component{
-    constructor(props){
-        super(props)
-    }
-
     render(){
         return (
-            <div>MainContainer</div>
+            <MainFrame />
         );
     }
 }
