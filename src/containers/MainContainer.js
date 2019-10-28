@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MainView } from '../components';
 
 class MainContainer extends Component {
     constructor(props) {
@@ -6,7 +7,11 @@ class MainContainer extends Component {
     }
 
     render() {
-        return <div>MainContainer</div>;
+        return (
+            <div>
+                <MainView />
+            </div>
+        );
     }
 }
 

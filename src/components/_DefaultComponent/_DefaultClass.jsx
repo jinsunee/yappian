@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-class Content extends Component {
+class _DefaultClass extends Component {
     render (){
         return (
             <div>
-                <div>content</div>
+                <div></div>
                 <div></div>
             </div>
         );
     }
 }
 
-export default Content;
+export default _DefaultClass;
