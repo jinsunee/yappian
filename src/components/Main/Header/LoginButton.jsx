@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import loginBtn from '../../../statics/img/loginBtn.png';
 
 const Wrapper = styled.img.attrs({
-    src: loginBtn
+    src: loginBtn,
 })`
     width: 95px;
     height: 30px;
@@ -18,6 +17,6 @@ const LoginButton = () => {
             <Wrapper />
         </a>
     );
-}
+};
 
 export default LoginButton;

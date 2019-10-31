@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
 
 import HeaderRight from './HeaderRight';
@@ -7,10 +6,29 @@ import backgroundImage from '../../../statics/img/group-5@3x.png';
 import logo from '../../../statics/img/yappian-copy@3x.png';
 import mainInfoFont from '../../../statics/img/MainInfoFont.png';
 
+const Header = ({ login_session, openCreatePopup }) => {
+    return (
+        <Wrapper>
+            <Bar>
+                <Left>
+                    <Logo />
+                </Left>
+                <Right>
+                    <HeaderRight
+                        login_session={login_session}
+                        openCreatePopup={openCreatePopup}
+                    />
+                </Right>
+            </Bar>
+            <Info />
+        </Wrapper>
+    );
+};
+
 const Wrapper = styled.div`
-    width:100%;
+    width: 100%;
     height: 62.5vh;
-    background-image:url(${backgroundImage});
+    background-image: url(${backgroundImage});
     background-size: 100% 100%;
     background-repeat: no-repeat;
 `;
@@ -21,7 +39,7 @@ const Bar = styled.div`
 `;
 
 const Info = styled.img.attrs({
-    src: mainInfoFont
+    src: mainInfoFont,
 })`
     width: 63.583vw;
     height: 27.214vh;
@@ -45,29 +63,11 @@ const Right = styled.div`
 `;
 
 const Logo = styled.img.attrs({
-    src: logo
+    src: logo,
 })`
     width: 140px;
     height: 45px;
     object-fit: contain;
 `;
-
-class Header extends Component {
-    render (){
-        return (
-            <Wrapper>
-                <Bar>
-                    <Left>
-                        <Logo />
-                    </Left>
-                    <Right>
-                        <HeaderRight login_session={this.props.login_session} />
-                    </Right>
-                </Bar>
-                <Info />
-            </Wrapper>
-        );
-    }
-}
 
 export default Header;
