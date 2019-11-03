@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 
 import { MainView } from '../components';
@@ -9,12 +9,15 @@ class MainContainer extends Component {
 
         this.state = {
             login_session: true,
-            isOpenCreateProject: true,
+            orderIdx: 0,
+            gisuList: [],
+            isOpenCreateProject: false,
         };
     }
 
     componentDidMount() {
         //this.getSession();
+        this.getOrdersNumber();
     }
 
     // 세션 가져오기
@@ -32,6 +35,33 @@ class MainContainer extends Component {
         });
     };
 
+    // get `gisu(order)` list from server
+    getOrdersNumber = () => {
+        axios
+            .get(`https://yappian.com/api/orders`)
+            .then(res => {
+                res.data.map((list, index) =>
+                    this.setState({
+                        gisuList: this.state.gisuList.concat({
+                            key: index,
+                            text: list.number + '기',
+                            value: parseInt(list.number),
+                        }),
+                    })
+                );
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    };
+
+    // SelectBox
+    handleOrders = (e, { value }) => {
+        this.setState({
+            ordersIdx: parseInt(value),
+        });
+    };
+
     openCreatePopup = () => {
         this.setState({
             isOpenCreateProject: true,
@@ -45,16 +75,18 @@ class MainContainer extends Component {
     };
 
     render() {
-        const { login_session, isOpenCreateProject } = this.state;
+        const { login_session, isOpenCreateProject, gisuList } = this.state;
         return (
-            <div>
+            <Fragment>
                 <MainView
                     login_session={login_session}
                     isOpenCreateProject={isOpenCreateProject}
                     openCreatePopup={this.openCreatePopup}
                     closeCreatePopup={this.closeCreatePopup}
+                    handleOrders={this.handleOrders}
+                    gisuList={gisuList}
                 />
-            </div>
+            </Fragment>
         );
     }
 }

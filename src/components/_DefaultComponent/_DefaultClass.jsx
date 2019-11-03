@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
 class _DefaultClass extends Component {
-    render (){
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
         return (
             <div>
                 <div></div>

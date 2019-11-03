@@ -1,3 +1,5 @@
+import React from 'react';
+
 const _DefaultFunctional = () => {
     return (
         <div>
@@ -5,6 +7,6 @@ const _DefaultFunctional = () => {
             <div></div>
         </div>
     );
-}
+};
 
 export default _DefaultFunctional;

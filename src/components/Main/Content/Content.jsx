@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Content extends Component {
-    render (){
+    render() {
         return (
             <div>
                 <div>content</div>

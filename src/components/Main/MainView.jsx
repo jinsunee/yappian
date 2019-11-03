@@ -10,6 +10,8 @@ const MainView = ({
     isOpenCreateProject,
     openCreatePopup,
     closeCreatePopup,
+    handleOrders,
+    gisuList,
 }) => {
     return (
         <MainWrapper>
@@ -19,7 +21,11 @@ const MainView = ({
             />
             <Content />
             {isOpenCreateProject === true ? (
-                <CreateNewProjectPopup closeCreatePopup={closeCreatePopup} />
+                <CreateNewProjectPopup
+                    closeCreatePopup={closeCreatePopup}
+                    handleOrders={handleOrders}
+                    gisuList={gisuList}
+                />
             ) : (
                 ' '
             )}

@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { Dropdown, Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom';
 
 import RadioButton from '../../common/RadioButton';
 import SubmitButton from '../../common/SubmitButton';
+import SelectBoxGisu from '../../common/SelectBoxGisu';
 import closePopupIcon from '../../../statics/img/noun-x-1890803@3x.png';
 
 class CreateNewProjectPopup extends Component {
@@ -13,8 +14,6 @@ class CreateNewProjectPopup extends Component {
         super(props);
 
         this.state = {
-            gisuList: [],
-            ordersIdx: 0,
             projectName: '',
             projectPlatform: 'iOS',
             password: '',
@@ -26,34 +25,9 @@ class CreateNewProjectPopup extends Component {
         };
     }
 
-    componentDidMount() {
-        this.getOrdersNumber();
-    }
-
-    // get `gisu(order)` list from server
-    getOrdersNumber = () => {
-        axios
-            .get(`https://yappian.com/api/orders`)
-            .then(res => {
-                res.data.map((list, index) =>
-                    this.setState({
-                        gisuList: this.state.gisuList.concat({
-                            key: index,
-                            text: list.number + '기',
-                            value: parseInt(list.number),
-                        }),
-                    })
-                );
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    };
-
-    // SelectBox
     handleOrders = (e, { value }) => {
+        this.props.handleOrders(e, { value });
         this.setState({
-            ordersIdx: parseInt(value),
             orderCaution: false,
         });
     };
@@ -166,9 +140,8 @@ class CreateNewProjectPopup extends Component {
     };
 
     render() {
-        const { closeCreatePopup } = this.props;
+        const { closeCreatePopup, gisuList, ordersIdx } = this.props;
         const {
-            gisuList,
             projectPlatform,
             projectIdx,
             redirect,
@@ -191,13 +164,11 @@ class CreateNewProjectPopup extends Component {
                     <Title>새 프로젝트 만들기</Title>
                     <Info>YAPP의 새로운 프로젝트를 만드세요!</Info>
                     <Form onSubmit={this.handleSubmit}>
-                        <SelectGisu orderCaution={orderCaution}>
-                            <Dropdown
-                                placeholder="기수선택"
-                                onChange={this.handleOrders}
-                                options={gisuList}
-                            />
-                        </SelectGisu>
+                        <SelectBoxGisu
+                            orderCaution={orderCaution}
+                            handleOrders={this.handleOrders}
+                            gisuList={gisuList}
+                        />
                         <InputProjectNameWrapper
                             projectNameCaution={projectNameCaution}
                         >
@@ -334,19 +305,6 @@ const Info = styled.div`
     text-align: center;
     margin-top: 31px;
     color: #555555;
-`;
-
-const SelectGisu = styled.div`
-    width: 114px;
-    height: 35px;
-    border-radius: 17.5px;
-    border: solid 1px
-        ${props => (props.orderCaution === true ? 'red' : '#b6b6b6')};
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
 `;
 
 const Form = styled.form`
