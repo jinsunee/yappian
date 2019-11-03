@@ -14,7 +14,7 @@ const MainView = ({
     gisuList,
 }) => {
     return (
-        <MainWrapper>
+        <Wrapper>
             <Header
                 login_session={login_session}
                 openCreatePopup={openCreatePopup}
@@ -29,15 +29,15 @@ const MainView = ({
             ) : (
                 ' '
             )}
-        </MainWrapper>
+        </Wrapper>
     );
 };
 
-const MainWrapper = styled.div`
+const Wrapper = styled.div`
     margin: 0px;
     padding: 0px;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 `;
 
 export default MainView;

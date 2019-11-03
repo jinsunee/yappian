@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LoginButton from './LoginButton';
+import LoginButton from '../../common/LoginButton';
 import OtherButtons from './OtherButtons';
 
 const HeaderRight = ({ login_session, openCreatePopup }) => {

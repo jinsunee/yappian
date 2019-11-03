@@ -1,20 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
-const defaultProps = {};
-const propTypes = {};
+import Header from './Header/Header';
 
-class ProjectArchivingView extends Component {
-    render (){
-        return (
-            <div>
-                <div>This is</div>
-                <div>ProjectArchivingView</div>
-            </div>
-        );
-    }
-}
+const ProjectArchivingView = () => {
+    return (
+        <Wrapper>
+            <TopLine />
+            <HeaderWrapper>
+                <Header />
+            </HeaderWrapper>
+        </Wrapper>
+    );
+};
 
-ProjectArchivingView.defaultProps = defaultProps;
-ProjectArchivingView.propTypes = propTypes;
+const Wrapper = styled.div`
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+`;
+
+const TopLine = styled.div`
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(to right, #5ae0ff, #c86dd7);
+`;
+
+const HeaderWrapper = styled.div`
+    width: 100%;
+    padding: 0px 50px 0px 50px;
+`;
 
 export default ProjectArchivingView;

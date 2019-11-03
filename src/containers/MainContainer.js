@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 import { MainView } from '../components';
@@ -77,16 +77,14 @@ class MainContainer extends Component {
     render() {
         const { login_session, isOpenCreateProject, gisuList } = this.state;
         return (
-            <Fragment>
-                <MainView
-                    login_session={login_session}
-                    isOpenCreateProject={isOpenCreateProject}
-                    openCreatePopup={this.openCreatePopup}
-                    closeCreatePopup={this.closeCreatePopup}
-                    handleOrders={this.handleOrders}
-                    gisuList={gisuList}
-                />
-            </Fragment>
+            <MainView
+                login_session={login_session}
+                isOpenCreateProject={isOpenCreateProject}
+                openCreatePopup={this.openCreatePopup}
+                closeCreatePopup={this.closeCreatePopup}
+                handleOrders={this.handleOrders}
+                gisuList={gisuList}
+            />
         );
     }
 }
