@@ -5,6 +5,7 @@ const RadioButton = ({ platform, selected, handleProjectPlatform }) => {
     return (
         <Wrapper
             selected={selected}
+            platform={platform}
             onClick={() => handleProjectPlatform(platform)}
         >
             {platform}
@@ -44,7 +45,7 @@ const Wrapper = styled.div`
     height: 35px;
     border-radius: 17.5px;
     border: solid 1px #b6b6b6;
-    margin-right: 7px;
+    margin-right: ${props => (props.platform === 'Web' ? '' : '6px')};
     ${props => (props.selected === true ? NoneSelected : Selected)};
 `;
 

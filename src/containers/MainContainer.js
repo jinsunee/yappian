@@ -39,7 +39,6 @@ class MainContainer extends Component {
     };
 
     closeCreatePopup = () => {
-        console.log('close');
         this.setState({
             isOpenCreateProject: false,
         });

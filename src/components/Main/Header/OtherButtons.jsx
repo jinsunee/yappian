@@ -22,8 +22,7 @@ const Wrapper = styled.div`
 
 const CreateProjectButton = styled.div`
     font-size: 1.143rem;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
