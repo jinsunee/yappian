@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import axios from 'axios';
 
-import { ProjectArchivingView } from '../components';
+import { ProjectArchivingView } from '../pre_components';
 
 class ProjectArchivingContainer extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            archivingView: 'progress',
+        };
+    }
 
     render() {
         const {

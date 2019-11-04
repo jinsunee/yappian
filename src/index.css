@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
+@font-face{
+  font-family: 'TurretRoad';
+  src: url('./statics/fonts/TurretRoad-Bold.ttf');
+  src: url('./statics/fonts/TurretRoad-ExtraBold.ttf');
+  src: url('./statics/fonts/TurretRoad-ExtraLight.ttf');
+  src: url('./statics/fonts/TurretRoad-Light.ttf');
+  src: url('./statics/fonts/TurretRoad-Medium.ttf');
+  src: url('./statics/fonts/TurretRoad-Regular.ttf');
+}
+
 body {
   margin: 0;
   font-family: 'Noto Sans', sans-serif;

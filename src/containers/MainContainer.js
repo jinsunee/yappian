@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import { MainView } from '../components';
+import MainView from '../components/Views/MainView';
 
 class MainContainer extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            login_session: true,
-            orderIdx: 0,
-            gisuList: [],
-            isOpenCreateProject: false,
+            login_session: false,
+            projectList: [],
         };
     }
 
     componentDidMount() {
         //this.getSession();
-        this.getOrdersNumber();
+        this.getProject();
     }
 
     // 세션 가져오기
@@ -35,56 +33,30 @@ class MainContainer extends Component {
         });
     };
 
-    // get `gisu(order)` list from server
-    getOrdersNumber = () => {
+    getProject = () => {
         axios
-            .get(`https://yappian.com/api/orders`)
+            .get(`https://yappian.com/api/projects`)
             .then(res => {
-                res.data.map((list, index) =>
-                    this.setState({
-                        gisuList: this.state.gisuList.concat({
-                            key: index,
-                            text: list.number + '기',
-                            value: parseInt(list.number),
-                        }),
-                    })
-                );
+                let arr = [];
+                res.data.map(project => {
+                    if (project.fileList.length === 2) {
+                        arr = arr.concat(project);
+                    }
+                });
+                this.setState({
+                    projectList: arr,
+                });
             })
             .catch(error => {
                 console.log(error);
             });
     };
 
-    // SelectBox
-    handleOrders = (e, { value }) => {
-        this.setState({
-            ordersIdx: parseInt(value),
-        });
-    };
-
-    openCreatePopup = () => {
-        this.setState({
-            isOpenCreateProject: true,
-        });
-    };
-
-    closeCreatePopup = () => {
-        this.setState({
-            isOpenCreateProject: false,
-        });
-    };
-
     render() {
-        const { login_session, isOpenCreateProject, gisuList } = this.state;
+        const { login_session, projectList } = this.state;
+
         return (
-            <MainView
-                login_session={login_session}
-                isOpenCreateProject={isOpenCreateProject}
-                openCreatePopup={this.openCreatePopup}
-                closeCreatePopup={this.closeCreatePopup}
-                handleOrders={this.handleOrders}
-                gisuList={gisuList}
-            />
+            <MainView login_session={login_session} projectList={projectList} />
         );
     }
 }
