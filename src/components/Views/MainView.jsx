@@ -6,6 +6,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 import NavBar from '../NavBar/Main/NavBar';
 import ProjectList from '../ProjectList/ProjectList';
+import CreateNewProjectPopup from '../Popup/CreateNewProjectPopup';
 
 class MainView extends Component {
     constructor(props) {
@@ -43,12 +44,22 @@ class MainView extends Component {
     };
 
     render() {
-        const { login_session } = this.props;
+        const {
+            login_session,
+            openCreatePopup,
+            isOpenCreateProject,
+            closeCreatePopup,
+            handleOrders,
+            gisuList,
+        } = this.props;
         const { propsProjectList } = this.state;
 
         return (
             <Wrapper>
-                <NavBar login_session={login_session} />
+                <NavBar
+                    login_session={login_session}
+                    openCreatePopup={openCreatePopup}
+                />
                 <Link
                     activeClass="active"
                     to="second"
@@ -145,6 +156,15 @@ class MainView extends Component {
                     </ProjectSelectGroup>
                     <ProjectList projectList={propsProjectList} />
                 </ThirdBlock>
+                {isOpenCreateProject === true ? (
+                    <CreateNewProjectPopup
+                        closeCreatePopup={closeCreatePopup}
+                        handleOrders={handleOrders}
+                        gisuList={gisuList}
+                    />
+                ) : (
+                    ' '
+                )}
             </Wrapper>
         );
     }

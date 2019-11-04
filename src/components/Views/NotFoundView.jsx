@@ -2,6 +2,23 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+class NotFoundView extends Component {
+    render() {
+        return (
+            <div>
+                <NotFoundTopLine />
+                <NotFoundWrapper>
+                    <ErrorBox>SORRY :(</ErrorBox>
+                    <h1>YAPPIAN 에러페이지입니다.</h1>
+                    <Link to="/">
+                        <MoveMainStyled>메인으로 이동하기</MoveMainStyled>
+                    </Link>
+                </NotFoundWrapper>
+            </div>
+        );
+    }
+}
+
 const NotFoundTopLine = styled.div`
     width: 100%;
     height: 10px;
@@ -36,22 +53,5 @@ const MoveMainStyled = styled.div`
     text-decoration: none;
     color: #0d71bb;
 `;
-
-class NotFoundView extends Component {
-    render() {
-        return (
-            <div>
-                <NotFoundTopLine />
-                <NotFoundWrapper>
-                    <ErrorBox>SORRY :(</ErrorBox>
-                    <h1>YAPPIAN 에러페이지입니다.</h1>
-                    <Link to="/">
-                        <MoveMainStyled>메인으로 이동하기</MoveMainStyled>
-                    </Link>
-                </NotFoundWrapper>
-            </div>
-        );
-    }
-}
 
 export default NotFoundView;

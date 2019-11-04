@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MainNavBar = ({ login_session }) => {
+import NavBarRight from './NavBarRight';
+
+const NavBar = ({ login_session, openCreatePopup }) => {
     return (
         <Wrapper>
             <Left>
                 <MainLogo>YAPPIAN.</MainLogo>
             </Left>
             <Right>
-                {login_session === false ? (
-                    <a href="https://yappian.com/api/login">
-                        <Login>Login</Login>
-                    </a>
-                ) : (
-                    ''
-                )}
+                <NavBarRight
+                    login_session={login_session}
+                    openCreatePopup={openCreatePopup}
+                />
             </Right>
         </Wrapper>
     );
@@ -61,16 +60,4 @@ const Right = styled.div`
     padding-right: 77px;
 `;
 
-const Login = styled.div`
-    font-family: TurretRoad;
-    font-size: 24px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;
-`;
-
-export default MainNavBar;
+export default NavBar;

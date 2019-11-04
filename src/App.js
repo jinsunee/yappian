@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { MainContainer, ProjectArchivingContainer } from './containers';
-import { NotFoundView } from './components';
-import './App.css';
+import NotFoundView from './components/Views/NotFoundView';
 
 function App() {
     return (
