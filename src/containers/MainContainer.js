@@ -8,7 +8,7 @@ class MainContainer extends Component {
         super(props);
 
         this.state = {
-            login_session: true,
+            login_session: false,
             orderIdx: 0,
             gisuList: [],
             projectList: [],
@@ -61,6 +61,7 @@ class MainContainer extends Component {
         axios
             .get(`https://yappian.com/api/orders`)
             .then(res => {
+                console.log(res.data);
                 res.data.map((list, index) =>
                     this.setState({
                         gisuList: this.state.gisuList.concat({
