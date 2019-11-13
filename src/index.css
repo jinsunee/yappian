@@ -10,16 +10,39 @@
 
 @font-face {
   font-family: 'NotoSansCJKkr';
-  src: url('./statics/fonts/NotoSans-Black.ttf');
-  src: url('./statics/fonts/NotoSans-Bold.ttf');
-  src: url('./statics/fonts/NotoSans-Light.ttf');
-  src: url('./statics/fonts/NotoSans-Medium.ttf');
-  src: url('./statics/fonts/NotoSans-Regular.ttf');
+  src: url('./statics/fonts/NotoSansCJKkr-Regular.otf');
+}
+
+@font-face {
+  font-family: 'NotoSansCJKkr-Light';
+  src: url('./statics/fonts/NotoSansCJKkr-Light.otf');
+}
+
+@font-face {
+  font-family: 'NotoSansCJKkr-Black';
+  src: url('./statics/fonts/NotoSansCJKkr-Black.otf');
+}
+
+@font-face {
+  font-family: 'NotoSansCJKkr-Medium';
+  src: url('./statics/fonts/NotoSansCJKkr-Medium.otf');
+}
+
+@font-face {
+  font-family: 'NotoSansCJKkr-Bold';
+  src: url('./statics/fonts/NotoSansCJKkr-Bold.otf');
+}
+
+@font-face {
+  font-family: 'NotoSansCJKkr-DemiLight';
+  src: url('./statics/fonts/NotoSansCJKkr-DemiLight.otf');
 }
 
 body {
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
+  width: 100%;
+  height: 100vh;
+  font-family: 'NotoSansCJKkr';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

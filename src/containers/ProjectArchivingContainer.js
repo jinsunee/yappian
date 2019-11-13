@@ -8,9 +8,10 @@ class ProjectArchivingContainer extends Component {
         super(props);
 
         this.state = {
-            archivingView: 'complete',
+            archivingView: 'progress',
             isLogin: true,
             isMember: true,
+            isOpenManagingProjectPopup: true,
         };
     }
 
@@ -62,17 +63,32 @@ class ProjectArchivingContainer extends Component {
         });
     };
 
+    openManagingPopup = () => {
+        this.setState({
+            isOpenManagingProjectPopup: true,
+        });
+    };
+
+    closeManagingPopup = () => {
+        this.setState({
+            isOpenManagingProjectPopup: false,
+        });
+    };
+
     render() {
         const {
             match: { params },
         } = this.props;
 
-        const { archivingView } = this.state;
+        const { archivingView, isOpenManagingProjectPopup } = this.state;
 
         return (
             <ProjectArchivingView
                 archivingView={archivingView}
                 handleArchivingView={this.handleArchivingView}
+                isOpenManagingProjectPopup={isOpenManagingProjectPopup}
+                openManagingPopup={this.openManagingPopup}
+                closeManagingPopup={this.closeManagingPopup}
             />
         );
     }

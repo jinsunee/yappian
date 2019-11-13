@@ -34,6 +34,14 @@ const SelectBox = styled.div`
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+
+    font-family: 'NotoSansCJKkr-Light';
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: -0.12px;
 `;
 
 const UrlNameInput = styled.input.attrs({
@@ -50,7 +58,7 @@ const UrlNameInput = styled.input.attrs({
 
     &::placeholder {
         text-align: center;
-        font-family: 'NotoSansCJKkr';
+        font-family: 'NotoSansCJKkr-Light';
         font-size: 14px;
         font-weight: 300;
         font-stretch: normal;

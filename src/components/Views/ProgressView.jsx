@@ -25,7 +25,7 @@ class ProgressView extends Component {
 
 const ProjectTitle = styled.div`
     height: 45px;
-    font-family: 'NotoSansCJKkr';
+    font-family: 'NotoSansCJKkr-Bold';
     font-size: 30px;
     font-weight: bold;
     font-stretch: normal;

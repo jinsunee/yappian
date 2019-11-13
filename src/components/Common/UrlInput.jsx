@@ -24,10 +24,11 @@ const InsertUrl = styled.div`
     margin-right: 15px;
     input {
         width: 100%;
+        height: 100%;
         border: none;
         margin-left: 5px;
         &::placeholder {
-            font-family: 'NotoSansCJKkr';
+            font-family: 'NotoSansCJKkr-Light';
             font-size: 14px;
             font-weight: 300;
             font-stretch: normal;

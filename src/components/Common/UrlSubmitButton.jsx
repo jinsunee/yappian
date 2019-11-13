@@ -14,6 +14,7 @@ const UrlSubmitButton = () => {
 const SubmitButton = styled.button`
     border: none;
     background-color: #ffffff;
+    cursor: pointer;
     img {
         width: 40px;
         height: 40px;

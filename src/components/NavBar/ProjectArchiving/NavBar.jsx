@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import NavBarRight from './NavBarRight';
 import logo from '../../../statics/img/logo-on-url.png';
 
-const Header = () => {
+const Header = ({ openManagingPopup }) => {
     return (
         <Wrapper>
             <HeaderLeft>
@@ -13,7 +13,7 @@ const Header = () => {
                     <Logo />
                 </Link>
             </HeaderLeft>
-            <NavBarRight />
+            <NavBarRight openManagingPopup={openManagingPopup} />
         </Wrapper>
     );
 };

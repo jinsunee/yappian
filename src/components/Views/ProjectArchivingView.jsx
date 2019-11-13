@@ -4,13 +4,30 @@ import styled, { css } from 'styled-components';
 import NavBar from '../NavBar/ProjectArchiving/NavBar';
 import ProgressView from '../Views/ProgressView';
 import CompleteView from './CompleteView';
+import CompletePopup from '../Popup/CompletePopup';
+// import ManagingProjectPopup from '../Popup/ManagingProjectPopup';
 
-const ProjectArchivingView = ({ archivingView, handleArchivingView }) => {
+const ProjectArchivingView = ({
+    archivingView,
+    handleArchivingView,
+    isOpenManagingProjectPopup,
+    openManagingPopup,
+    closeManagingPopup,
+}) => {
     return (
         <MainWrapper>
             <TopLine />
+            {/* {isOpenManagingProjectPopup === true ? (
+                <ManagingProjectPopup
+                    closeManagingPopup={closeManagingPopup}
+                    isOpenManagingProjectPopup={isOpenManagingProjectPopup}
+                />
+            ) : (
+                ''
+            )} */}
             <Wrapper>
-                <NavBar />
+                <NavBar openManagingPopup={openManagingPopup} />
+
                 <SelectArchivingWrapper>
                     <SelectArchivingGroup>
                         <ProgressInstance
@@ -38,15 +55,16 @@ const ProjectArchivingView = ({ archivingView, handleArchivingView }) => {
                     )}
                 </ViewWrapper>
             </Wrapper>
+            <CompletePopup />
         </MainWrapper>
     );
 };
 
 const MainWrapper = styled.div`
-    margin: 0px;
-    padding: 0px;
     height: 100vh;
     width: 100%;
+    margin: 0;
+    padding: 0;
 `;
 
 const TopLine = styled.div`
@@ -89,7 +107,7 @@ const ProgressInstance = styled.div`
         }
     }}
     text-align: center;
-    font-family: 'NotoSansCJKkr';
+    font-family: 'NotoSansCJKkr-Medium';
     font-size: 17px;
     font-weight: 500;
     font-stretch: normal;
@@ -115,7 +133,7 @@ const CompleteInstance = styled.div`
         }
     }}
     text-align: center;
-    font-family: 'NotoSansCJKkr';
+    font-family: 'NotoSansCJKkr-Medium';
     font-size: 17px;
     font-weight: 500;
     font-stretch: normal;

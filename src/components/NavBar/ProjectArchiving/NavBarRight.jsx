@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import othersIcon from '../../../statics/img/invalid-name@3x.png';
 import userIcon from '../../../statics/img/user-icon-gray@3x.png';
 
-const NavBarRight = () => {
+const NavBarRight = ({ openManagingPopup }) => {
     return (
         <Wrapper>
-            <OthersIcon />
+            <OthersIcon onClick={() => openManagingPopup()} />
             <UserIcon />
         </Wrapper>
     );

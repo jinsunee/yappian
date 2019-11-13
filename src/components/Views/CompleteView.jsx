@@ -54,7 +54,7 @@ const Left = styled.div`
         margin-bottom: 64px;
         position: relative;
         .infoWrapper {
-            font-family: 'NotoSansCJKkr';
+            font-family: 'NotoSansCJKkr-DemiLight';
             font-size: 14px;
             font-weight: 300;
             font-stretch: normal;
@@ -77,7 +77,7 @@ const Left = styled.div`
         }
     }
     .middle {
-        font-family: 'NotoSansCJKkr';
+        font-family: 'NotoSansCJKkr-DemiLight';
         font-size: 14px;
         font-weight: 300;
         font-stretch: normal;
@@ -90,11 +90,21 @@ const Left = styled.div`
     }
     .bottom {
         width: 100%;
+        height: auto;
         word-wrap: break-word;
         border-radius: 5px;
         border: solid 0.5px #666666;
         background-color: #efefef;
         padding: 7px 17px 7px 17px;
+
+        font-family: 'NotoSansCJKkr-DemiLight';
+        font-size: 14px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+        color: #444444;
     }
 `;
 

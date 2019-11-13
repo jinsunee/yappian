@@ -32,7 +32,7 @@ const ToolNameInput = styled.input.attrs({
     background-color: #ffffff;
     text-align: center;
     &::placeholder {
-        font-family: 'NotoSansCJKkr';
+        font-family: 'NotoSansCJKkr-Light';
         font-size: 14px;
         font-weight: 300;
         font-stretch: normal;
