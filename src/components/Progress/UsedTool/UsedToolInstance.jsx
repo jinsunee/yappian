@@ -22,6 +22,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     .toolname {
+        font-family: 'NotoSansCJKkr';
         font-size: 18px;
         font-weight: bold;
         font-stretch: normal;

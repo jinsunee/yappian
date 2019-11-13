@@ -20,6 +20,7 @@ const UrlCampSection = ({ camptype }) => {
 const Wrapper = styled.div`
     flex: 1;
     .title {
+        font-family: 'NotoSansCJKkr';
         font-size: 18px;
         font-weight: bold;
         font-stretch: normal;

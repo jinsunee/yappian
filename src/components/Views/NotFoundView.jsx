@@ -36,7 +36,7 @@ const NotFoundWrapper = styled.div`
 `;
 
 const ErrorBox = styled.div`
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'NotoSansCJKkr';
     font-size: 5rem;
     font-weight: bold;
     font-style: normal;

@@ -283,6 +283,7 @@ const CloseIcon = styled.img.attrs({
 
 const Title = styled.div`
     width: 100%;
+    font-family: 'NotoSansCJKkr';
     font-size: 30px;
     font-weight: bold;
     font-stretch: normal;
@@ -296,6 +297,7 @@ const Title = styled.div`
 
 const Info = styled.div`
     width: 100%;
+    font-family: 'NotoSansCJKkr';
     font-size: 14px;
     font-weight: 700;
     font-stretch: normal;
@@ -330,6 +332,7 @@ const InputProjectName = styled.input.attrs({
     height: 35px;
     border: none;
     &::placeholder {
+        font-family: 'NotoSansCJKkr';
         font-size: 14px;
         font-weight: 300;
         font-stretch: normal;
@@ -351,6 +354,7 @@ const RadioWrapper = styled.div`
 
 const InfoInviteCode = styled.div`
     margin-bottom: 9px;
+    font-family: 'NotoSansCJKkr';
     font-size: 14px;
     font-weight: 500;
     font-stretch: normal;
@@ -377,6 +381,7 @@ const InputInviteCode = styled.input.attrs({
 `;
 
 const CautionInviteCode = styled.div`
+    font-family: 'NotoSansCJKkr';
     font-size: 14px;
     font-weight: 500;
     font-stretch: normal;

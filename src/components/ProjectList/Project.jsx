@@ -71,6 +71,7 @@ const ProjectWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'NotoSansCJKkr';
     font-size: 30px;
     font-weight: 200;
     font-stretch: normal;
@@ -101,6 +102,7 @@ const ProjectTop = styled.div`
 const ProjectTopIcon = styled.div`
     width: 84px;
     height: 30px;
+    font-family: 'NotoSansCJKkr';
     font-size: 14px;
     font-weight: normal;
     font-stretch: normal;

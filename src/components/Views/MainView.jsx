@@ -225,7 +225,7 @@ const ProjectInfo = styled.div`
     height: 25vh;
     display: flex;
     justify-content: center;
-    font-family: NotoSansCJKkr;
+    font-family: 'NotoSansCJKkr';
     font-size: 20px;
     font-weight: normal;
     font-stretch: normal;

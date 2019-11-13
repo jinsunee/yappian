@@ -8,7 +8,7 @@ class MainContainer extends Component {
         super(props);
 
         this.state = {
-            login_session: false,
+            login_session: true,
             orderIdx: 0,
             gisuList: [],
             projectList: [],

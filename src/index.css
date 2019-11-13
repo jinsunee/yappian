@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
-
 @font-face{
   font-family: 'TurretRoad';
   src: url('./statics/fonts/TurretRoad-Bold.ttf');
@@ -8,6 +6,15 @@
   src: url('./statics/fonts/TurretRoad-Light.ttf');
   src: url('./statics/fonts/TurretRoad-Medium.ttf');
   src: url('./statics/fonts/TurretRoad-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'NotoSansCJKkr';
+  src: url('./statics/fonts/NotoSans-Black.ttf');
+  src: url('./statics/fonts/NotoSans-Bold.ttf');
+  src: url('./statics/fonts/NotoSans-Light.ttf');
+  src: url('./statics/fonts/NotoSans-Medium.ttf');
+  src: url('./statics/fonts/NotoSans-Regular.ttf');
 }
 
 body {

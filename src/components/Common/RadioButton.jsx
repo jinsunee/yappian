@@ -15,6 +15,7 @@ const RadioButton = ({ platform, selected, handleProjectPlatform }) => {
 
 const Selected = css`
     border: solid 1px #b6b6b6;
+    font-family: 'NotoSansCJKkr';
     font-size: 14px;
     font-weight: 300;
     font-stretch: normal;
@@ -27,6 +28,7 @@ const Selected = css`
 
 const NoneSelected = css`
     border: solid 2px #b382de;
+    font-family: 'NotoSansCJKkr';
     font-size: 14px;
     font-weight: bold;
     font-stretch: normal;

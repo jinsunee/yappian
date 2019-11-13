@@ -43,6 +43,7 @@ const Wrapper = styled.a.attrs({
         right: 15px;
     }
     .urlTitle {
+        font-family: 'NotoSansCJKkr';
         font-size: 14px;
         font-weight: 300;
         font-stretch: normal;

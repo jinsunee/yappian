@@ -27,6 +27,7 @@ const InsertUrl = styled.div`
         border: none;
         margin-left: 5px;
         &::placeholder {
+            font-family: 'NotoSansCJKkr';
             font-size: 14px;
             font-weight: 300;
             font-stretch: normal;

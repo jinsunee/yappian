@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 import NavBar from '../NavBar/ProjectArchiving/NavBar';
 import ProgressView from '../Views/ProgressView';
+import CompleteView from './CompleteView';
 
 const ProjectArchivingView = ({ archivingView, handleArchivingView }) => {
     return (
@@ -30,7 +31,11 @@ const ProjectArchivingView = ({ archivingView, handleArchivingView }) => {
                     <ProjectInfoText>{}</ProjectInfoText>
                 </ProjectInfo> */}
                 <ViewWrapper>
-                    <ProgressView />
+                    {archivingView === 'progress' ? (
+                        <ProgressView />
+                    ) : (
+                        <CompleteView />
+                    )}
                 </ViewWrapper>
             </Wrapper>
         </MainWrapper>
@@ -84,6 +89,7 @@ const ProgressInstance = styled.div`
         }
     }}
     text-align: center;
+    font-family: 'NotoSansCJKkr';
     font-size: 17px;
     font-weight: 500;
     font-stretch: normal;
@@ -109,6 +115,7 @@ const CompleteInstance = styled.div`
         }
     }}
     text-align: center;
+    font-family: 'NotoSansCJKkr';
     font-size: 17px;
     font-weight: 500;
     font-stretch: normal;

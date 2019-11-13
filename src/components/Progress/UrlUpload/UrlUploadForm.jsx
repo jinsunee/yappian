@@ -50,6 +50,7 @@ const UrlNameInput = styled.input.attrs({
 
     &::placeholder {
         text-align: center;
+        font-family: 'NotoSansCJKkr';
         font-size: 14px;
         font-weight: 300;
         font-stretch: normal;

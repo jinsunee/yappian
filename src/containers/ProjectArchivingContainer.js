@@ -8,7 +8,7 @@ class ProjectArchivingContainer extends Component {
         super(props);
 
         this.state = {
-            archivingView: 'progress',
+            archivingView: 'complete',
             isLogin: true,
             isMember: true,
         };
